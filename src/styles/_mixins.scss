@@ -1,0 +1,49 @@
+@use './variables' as *;
+
+
+@mixin on-tablet {
+  @media (min-width: $tablet-min-width) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: $desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin on-wide-desktop {
+  @media (min-width: $wide-desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin page-grid {
+  --columns: 2;
+  display: grid;
+  column-gap: $page-grid-gap-mob;
+  grid-template-columns: repeat(var(--columns), 1fr);
+
+  @include on-tablet {
+    --columns: 6;
+  }
+
+  @include on-desktop {
+    --columns: 12;
+    column-gap: $page-grid-gap-desk;
+  }
+}
+
+@mixin white-button-hover {
+  background-color: white;
+  color: black;
+  border: 1px solid transparent;
+  transition: background-color .3s, color .3s, border .3s;
+
+  &:hover {
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+  }
+}

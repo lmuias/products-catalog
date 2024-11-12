@@ -1,0 +1,35 @@
+{
+  "products": [
+    {
+      "id": "4",
+      "imageUrl": "/Batman.webp",
+      "name": "phone",
+      "count": 1,
+      "weight": "220g",
+      "size": {
+        "height": 200,
+        "width": 200
+      },
+      "comments": [
+        {
+          "id": "1",
+          "productId": "4",
+          "description": "asdasd",
+          "date": "12/11/2024 18:38"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "imageUrl": "/J9g8ClFsz6s.jpg",
+      "name": "Nice product",
+      "count": 1,
+      "weight": "445",
+      "size": {
+        "width": 440,
+        "height": 400
+      },
+      "comments": []
+    }
+  ]
+}

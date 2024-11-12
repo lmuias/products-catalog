@@ -1,0 +1,78 @@
+@use '../../styles/mixins' as *;
+@use '../../styles/variables' as *;
+
+.container {
+  row-gap: 40px;
+
+  @include page-grid;
+
+
+  @include on-desktop {
+    row-gap: 80px;
+  }
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+  grid-column: 1 / -1;
+  margin: 0 auto;
+
+  @include on-tablet {
+    gap: 80px;
+    grid-column: 2 / 6;
+  }
+
+  @include on-desktop {
+    grid-column: 3 / 11;
+  }
+}
+
+.button {
+  grid-column: 1 / -1;
+  justify-self: center;
+  padding: 20px 40px;
+  border: 1px solid transparent;
+  background-color: white;
+  transition: background-color .3s, color .3s, border .3s;
+  letter-spacing: 4px;
+
+  &:hover {
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+  }
+}
+
+.title {
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 24px;
+
+  @include on-tablet {
+    font-size: 34px;
+  }
+
+  @include on-desktop {
+    font-size: 40px;
+  }
+}
+
+.description {
+  text-align: center;
+  font-family: "Faculty Glyphic", sans-serif;;
+  font-size: 14px;
+  line-height: 150%;
+
+  @include on-tablet {
+    font-size: 18px;
+  }
+
+  @include on-desktop {
+    font-size: 20px;
+  }
+}

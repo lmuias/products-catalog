@@ -1,0 +1,60 @@
+@use '../../styles/mixins' as *;
+@use '../../styles/variables' as *;
+
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: background-color .3s, transform .3s;
+  cursor: pointer;
+  border: 5px solid black;
+  padding: 20px;
+  grid-column: 1 / -1;
+
+
+  &:hover {
+    background-color: white;
+    transform: scale(.95);
+
+    .text,
+    .name {
+      color: black;
+    }
+  }
+
+
+  @include on-tablet {
+    grid-column: span 4;
+  }
+
+  @include on-desktop {
+    grid-column: span 3;
+  }
+}
+
+.image {
+  width: 100%;
+  height: 280px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: transform .3s;
+}
+
+.name {
+  align-self: center;
+}
+
+.text,
+.name {
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: 4px;
+  transition: color .3s;
+}
+
+.block {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
